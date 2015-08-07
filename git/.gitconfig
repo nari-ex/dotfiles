@@ -1,0 +1,15 @@
+[user]
+	name = TAKAMURA Narimichi
+	email = takamura@heartbeats.jp
+[push]
+	default = current
+[alias]
+  st = status
+  ci = commit -v
+  co = checkout
+  piyo = clone
+[github]
+	user = nari-ex
+[core]
+  editor = /usr/local/bin/vim
+  excludesfile = ~/.gitignore

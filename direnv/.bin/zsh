@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+PATH=$(echo $PATH | sed 's/^[^:]*://g') bundle exec "$@"
