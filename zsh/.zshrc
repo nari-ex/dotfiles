@@ -3,13 +3,6 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-
-# User configuration
-
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -63,23 +56,6 @@ autoload -U colors; colors
 #setopt ALWAYS_LAST_PROMPT
 #setopt CDABLE_VARS
 #setopt AUTO_PARAM_SLASH
-
-## prompt
-#source ~/.zshrc.sh
-#ZSH_THEME_GIT_PROMPT_PREFIX=""
-#ZSH_THEME_GIT_PROMPT_SUFFIX=")"
-#ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
-#ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[magenta]%}"
-#ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}%{● %G%}"
-#ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{✖ %G%}"
-#ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{✚ %G%}"
-#ZSH_THEME_GIT_PROMPT_BEHIND="%{↓ %G%}"
-#ZSH_THEME_GIT_PROMPT_AHEAD="%{↑ %G%}"
-#ZSH_THEME_GIT_PROMPT_UNTRACKED="%{… %G%}"
-#ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔ %G%}"
-#PROMPT='🍚  %b$(git_super_status) '
-#GIT_PROMPT_EXECUTABLE="haskell"
-#ZSH_THEME_GIT_PROMPT_CACHE="true"
 
 # path
 export COREUTILS_PATH="/usr/local/opt/coreutils/libexec/gnubin"
