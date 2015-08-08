@@ -4,10 +4,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # general
-#umask 002
 export LANG=ja_JP.UTF-8
 #export EDITOR=vim
 export KCODE=u
@@ -104,13 +102,6 @@ workon py27
 if ( ! test $TMUX ) && ( ! expr $TERM : "^screen" > /dev/null ) && which tmux > /dev/null; then
   if ( tmux has-session > /dev/null 2>&1  ); then
     session=`tmux list-sessions | cut -d : -f 1`
-    #if [ -n "$session" ]; then
-    #  echo "Attache tmux session $session."
-    #  tmux attach-session -t $session
-    #else
-    #  echo "Session has been already attached."
-    #  tmux list-sessions
-    #fi
   else
     echo "Create new tmux session."
     tmux
