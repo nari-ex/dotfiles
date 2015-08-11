@@ -71,9 +71,7 @@ NeoBundle 'https://github.com/suan/vim-instant-markdown'
 NeoBundle 'vim-scripts/desert.vim'
 call neobundle#end()
 
-" ファイルタイプが変更されたとき、ファイルタイプ用のプラグインを自動読み込みするようになる。
 filetype plugin on
-" ファイルタイプが変更されたとき、ファイルタイプ用のインデント設定を自動読み込みするようになる。
 filetype indent on
 
 " 分割した設定ファイルをすべて読み込む
