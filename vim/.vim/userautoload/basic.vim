@@ -36,4 +36,3 @@ set wildmode=list:longest
 set incsearch
 
 set showcmd
-
