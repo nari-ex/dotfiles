@@ -6,3 +6,4 @@ vim/.vim/colors
 vim/.vim/bundle
 vim/.vim/.bundle/neobundle.vim
 vim/.vim/plugins/neobundle.vim
+zsh/oh-my-zsh
