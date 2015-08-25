@@ -7,7 +7,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # general
 export LANG=ja_JP.UTF-8
-#export EDITOR=vim
 export KCODE=u
 setopt auto_pushd
 setopt correct
@@ -15,7 +14,6 @@ setopt magic_equal_subst
 setopt prompt_subst
 setopt notify
 setopt equals
-#autoload -U compinit; compinit
 setopt auto_list
 setopt auto_menu 
 setopt auto_cd
@@ -49,11 +47,7 @@ function history-all { history -E 1 }
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 export ZLS_COLORS=$LS_COLORS
 export CLICOLOR=true
-#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 autoload -U colors; colors
-#setopt ALWAYS_LAST_PROMPT
-#setopt CDABLE_VARS
-#setopt AUTO_PARAM_SLASH
 
 # path
 export COREUTILS_PATH="/usr/local/opt/coreutils/libexec/gnubin"
