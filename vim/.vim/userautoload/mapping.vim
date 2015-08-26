@@ -1,4 +1,3 @@
-" insert mode での移動
 inoremap <C-e> <END>
 inoremap <C-a> <HOME>
 inoremap <C-j> <Down>
