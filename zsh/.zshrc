@@ -7,7 +7,7 @@ function bgnotify_formatted {
   [ $1 -eq 0 ] && title="Success" || title="Failed"
   bgnotify "$title -- after $3 s" "$2";
 }
-plugins=(git themes bgnotify)
+plugins=(git themes bgnotify bundler emoji-clock brew)
 source $ZSH/oh-my-zsh.sh
 
 # zhs-completions
