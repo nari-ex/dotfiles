@@ -1,4 +1,3 @@
- " howm_dirはファイルを保存したいディレクトリを設定。
  let howm_dir             = '~/Dropbox/Private/howm'
  let howm_filename        = '%Y-%m-%d.md'
  let howm_fileencoding    = 'utf-8'
