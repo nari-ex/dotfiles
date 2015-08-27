@@ -21,6 +21,7 @@ setopt list_packed
 setopt list_types
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 setopt MULTIOS
+setopt nonomatch
 
 # glob
 setopt extended_glob
