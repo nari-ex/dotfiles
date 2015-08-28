@@ -1,11 +1,6 @@
-" vi 互換OFF
 set nocompatible
-
-" ファイルタイプを一時的に無効化
 filetype off
-" ファイルタイプ用のプラグインを自動読み込みしないようになる。
 filetype plugin off
-"  ファイルタイプ用のインデント設定を自動読み込みしないようになる。
 filetype indent off
 
 if has('vim_starting')
@@ -73,7 +68,6 @@ call neobundle#end()
 filetype plugin on
 filetype indent on
 
-" 分割した設定ファイルをすべて読み込む
 set runtimepath+=~/.vim/
 runtime! userautoload/*.vim
 
