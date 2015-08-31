@@ -66,8 +66,7 @@ NeoBundle 'https://github.com/suan/vim-instant-markdown'
 NeoBundle 'vim-scripts/desert.vim'
 call neobundle#end()
 
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 set runtimepath+=~/.vim/
 runtime! userautoload/*.vim
