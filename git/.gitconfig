@@ -10,6 +10,7 @@
   piyo = clone
 [github]
 	user = nari-ex
+	email = takamura@topotal.com
 [core]
   editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore
