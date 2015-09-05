@@ -5,4 +5,4 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
-let QFixHowm_Key = 'g'
+"let QFixHowm_Key = 'g'
