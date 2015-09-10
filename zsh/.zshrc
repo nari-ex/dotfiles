@@ -1,3 +1,4 @@
+# oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 bgnotify_threshold=4  ## set your own notification threshold
@@ -9,9 +10,11 @@ function bgnotify_formatted {
 plugins=(git themes bgnotify)
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# zhs-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 # general
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 export LANG=ja_JP.UTF-8
 export KCODE=u
 setopt auto_pushd
