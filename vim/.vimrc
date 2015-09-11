@@ -4,7 +4,7 @@ filetype plugin off
 filetype indent off
 
 if has('vim_starting')
-	set runtimepath+=~/.vim/.bundle/neobundle.vim
+	set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
 
 let g:vimproc_dll_path = $VIMRUNTIME . '/vimproc/autoload/vimproc_mac.so'
