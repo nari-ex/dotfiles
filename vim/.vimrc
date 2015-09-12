@@ -1,7 +1,5 @@
 set nocompatible
-filetype off
-filetype plugin off
-filetype indent off
+filetype plugin indent off
 
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim
