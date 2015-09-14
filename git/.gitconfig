@@ -7,7 +7,13 @@
   st = status
   ci = commit -v
   co = checkout
+  di = diff
+  dif = diff
   piyo = clone
+  puhs = push
+  pus = push
+  puh = push
+  psuh = push
 [github]
 	user = nari-ex
 	email = takamura@topotal.com
