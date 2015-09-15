@@ -342,12 +342,14 @@
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>1239 569 201 309 0 0 1440 878 </string>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>510 275 445 103 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>-874 1253 924 485 -1742 900 1920 1177 </string>
+	<string>450 200 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>6 28 1432 843 0 0 1440 877 </string>
+	<string>4 0 1436 877 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_A4245392-554B-49BF-A6BE-B120E8FDAAA9</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_E16FA9B1-A2CF-467A-BBB4-10EDE4384988</key>
@@ -905,7 +907,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Ricty-Regular 18</string>
+			<string>RictyDiscord-Regular 18</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1875,7 +1877,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-07-30T03:38:27Z</date>
+	<date>2015-09-17T04:38:21Z</date>
 	<key>SUSkippedVersion</key>
 	<string>1.0.0.20140629</string>
 	<key>SavePasteHistory</key>
