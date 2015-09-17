@@ -61,6 +61,9 @@ NeoBundle 'https://github.com/tell-k/vim-autoflake'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'https://github.com/suan/vim-instant-markdown'
 NeoBundle 'vim-scripts/desert.vim'
+NeoBundle 'alpaca-tc/alpaca_powertabline'
+NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+NeoBundle 'Lokaltog/powerline-fontpatcher'
 call neobundle#end()
 
 filetype plugin indent on
