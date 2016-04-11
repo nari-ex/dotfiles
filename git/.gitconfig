@@ -1,6 +1,7 @@
 [user]
 	name = TAKAMURA Narimichi
 	email = takamura@heartbeats.jp
+	signingkey = F86359AD
 [push]
 	default = current
 [alias]
@@ -20,3 +21,9 @@
 [core]
   editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[gpg]
+	program = gpg2
+[commit]
+	gpgsign = true
