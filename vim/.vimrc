@@ -1,69 +1,102 @@
 set nocompatible
 filetype plugin indent off
 
-if has('vim_starting')
-	set runtimepath+=~/.vim/bundle/neobundle.vim
-endif
-
 let g:vimproc_dll_path = $VIMRUNTIME . '/vimproc/autoload/vimproc_mac.so'
 
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides'
-NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'https://github.com/Shougo/neocomplcache.git'
-NeoBundle 'https://github.com/ujihisa/neco-look.git'
-NeoBundle 'https://github.com/thinca/vim-ref.git'
-NeoBundle 'https://github.com/Shougo/vimproc.git', {
-      \ 'build' : {
-      \     'windows' : 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'linux' : 'make',
-      \     'unix' : 'gmake',
-      \    },
-      \ }
-NeoBundle 'surround.vim'
-NeoBundle 'https://github.com/davidoc/taskpaper.vim.git'
-NeoBundle 'https://github.com/vim-scripts/taglist.vim.git'
-NeoBundle 'https://github.com/h1mesuke/vim-alignta.git'
-NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
-NeoBundle 'https://github.com/scrooloose/syntastic.git'
-NeoBundle 'JavaScript-syntax'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'https://github.com/nvie/vim-pyflakes.git'
-NeoBundle 'lambdalisue/vim-python-virtualenv'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'https://github.com/davidhalter/jedi-vim'
-NeoBundle 'https://github.com/mattn/excitetranslate-vim'
-NeoBundle 'https://github.com/mattn/webapi-vim'
-NeoBundle 'Pydiction'
-NeoBundle 'drakontia/sphinx.vim'
-NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
-NeoBundle 'git://github.com/fuenor/qfixhowm.git'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'othree/html5.vim'
-NeoBundle 'mjbrownie/django-template-textobjects'
-NeoBundle 'https://github.com/lambdalisue/vim-django-support'
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'rcmdnk/vim-markdown'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'https://github.com/rizzatti/dash.vim.git'
-NeoBundle 'pathogen.vim'
-NeoBundle 'https://github.com/alfredodeza/khuno.vim.git'
-NeoBundle 'chase/vim-ansible-yaml'
-NeoBundle 'glidenote/serverspec-snippets'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'https://github.com/lambdatoast/elm.vim.git'
-NeoBundle 'https://github.com/tell-k/vim-autoflake'
-NeoBundle 'hynek/vim-python-pep8-indent'
-NeoBundle 'https://github.com/suan/vim-instant-markdown'
-NeoBundle 'vim-scripts/desert.vim'
-NeoBundle 'kien/ctrlp.vim'
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
 
-call neobundle#end()
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath^=/Users/takamura/.vim/rc/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin(expand('/Users/takamura/.vim/rc'))
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('nathanaelkane/vim-indent-guides')
+call dein#add('surround.vim')
+call dein#add('taglist.vim.git')
+call dein#add('vim-coffee-script.git')
+call dein#add('JavaScript-syntax')
+call dein#add('pangloss/vim-javascript')
+call dein#add('lambdalisue/vim-python-virtualenv')
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('mattn/excitetranslate-vim')
+call dein#add('drakontia/sphinx.vim')
+call dein#add('fuenor/qfixhowm.git')
+call dein#add('mattn/emmet-vim')
+call dein#add('hail2u/vim-css3-syntax')
+call dein#add('othree/html5.vim')
+call dein#add('mjbrownie/django-template-textobjects')
+call dein#add('lambdalisue/vim-django-support')
+call dein#add('kana/vim-textobj-user')
+call dein#add('godlygeek/tabular')
+call dein#add('gabrielelana/vim-markdown')
+call dein#add('tyru/open-browser.vim')
+call dein#add('rizzatti/dash.vim.git')
+call dein#add('pathogen.vim')
+call dein#add('alfredodeza/khuno.vim.git')
+call dein#add('chase/vim-ansible-yaml')
+call dein#add('glidenote/serverspec-snippets')
+call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('hynek/vim-python-pep8-indent')
+call dein#add('vim-scripts/desert.vim')
+call dein#add('kien/ctrlp.vim')
+call dein#add('majutsushi/tagbar')
+call dein#add('fatih/vim-go')
+
+" You can specify revision/branch/tag.
+call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
+
+"End dein Scripts-------------------------
+
+" if dein#load_state(s:dein_dir)
+"   call dein#begin(s:dein_dir)
+" 
+"   let g:rc_dir    = expand('~/.vim/rc')
+"   let s:toml      = g:rc_dir . '/dein.toml'
+"   let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+" 
+"   " call dein#load_toml(s:lazy_toml, {'lazy': 1})
+" 
+"   " TOML を読み込み、キャッシュしておく
+"   call dein#load_toml(s:toml,      {'lazy': 0})
+"   call dein#end()
+"   call dein#save_state()
+" endif
+
+if dein#check_install()
+  call dein#install()
+endif
 
 filetype plugin indent on
 
