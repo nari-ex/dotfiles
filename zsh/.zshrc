@@ -14,7 +14,7 @@ source $ZSH/oh-my-zsh.sh
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # general
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/bin:/usr/local/bin
 export LANG=ja_JP.UTF-8
 export KCODE=u
 setopt auto_pushd
@@ -31,6 +31,7 @@ setopt list_types
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 setopt MULTIOS
 unset SSH_AUTH_SOCK
+setopt nonomatch
 
 # glob
 setopt extended_glob
@@ -93,15 +94,6 @@ export TERM="xterm-256color"
 export LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
 eval $(gdircolors ~/.dir_colors -b)
 
-# gem and rbenv
-eval "$(rbenv init - zsh)"
-
-
-# virtualenv
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-source /usr/local/bin/virtualenvwrapper_lazy.sh
-workon py27
-
 # tmux
 if ( ! test $TMUX ) && ( ! expr $TERM : "^screen" > /dev/null ) && which tmux > /dev/null; then
   if ( tmux has-session > /dev/null 2>&1  ); then
@@ -111,6 +103,11 @@ if ( ! test $TMUX ) && ( ! expr $TERM : "^screen" > /dev/null ) && which tmux > 
     tmux
   fi
 fi
+
+# virtualenv
+#[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+source /usr/local/bin/virtualenvwrapper_lazy.sh
+#workon py27
 
 # git
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -122,9 +119,6 @@ if [ -x "$(which go)" ]; then
   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
 
-# boot2docker
-eval "$(boot2docker shellinit)"
-
 # direnv
 eval "$(direnv hook zsh)"
 
@@ -133,3 +127,23 @@ source '/Users/takamura/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
 source '/Users/takamura/google-cloud-sdk/completion.zsh.inc'
+
+# gem and rbenv
+eval "$(rbenv init - zsh)"
+
+# gpg
+export GPG_TTY=$(tty)
+if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+  source ~/.gnupg/.gpg-agent-info
+  export GPG_AGENT_INFO
+else
+  eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi
+export PATH=/usr/local/texlive/2015basic/bin/universal-darwin/:$PATH
+
+# iTerm2
+function iterm2prof() {
+  echo -e "\033]50;SetProfile=$1\a"
+}
+
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
