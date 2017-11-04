@@ -67,3 +67,6 @@ let g:flake8_ignore="E501,W293"
 let g:khuno_ignore="E501,W293,D102,D100"
 
 let g:instant_markdown_autostart = 0
+
+" 'gabrielelana/vim-markdown'
+let g:markdown_enable_spell_checking = 0 

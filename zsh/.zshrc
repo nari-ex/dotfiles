@@ -1,20 +1,15 @@
 # oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
-bgnotify_threshold=4  ## set your own notification threshold
-function bgnotify_formatted {
-  ## $1=exit_status, $2=command, $3=elapsed_time
-  [ $1 -eq 0 ] && title="Success" || title="Failed"
-  bgnotify "$title -- after $3 s" "$2";
-}
-plugins=(git themes bgnotify bundler emoji-clock brew)
+plugins=(git themes bundler emoji-clock brew)
+#plugins=(bgnotify bundler emoji-clock brew)
 source $ZSH/oh-my-zsh.sh
 
-# zhs-completions
+# zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # general
-export PATH=$PATH:$HOME/bin:/usr/local/bin
+export PATH=/usr/local/opt/openssl/bin:$PATH:$HOME/bin:/usr/local/bin
 export LANG=ja_JP.UTF-8
 export KCODE=u
 setopt auto_pushd
@@ -30,7 +25,7 @@ setopt list_packed
 setopt list_types
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 setopt MULTIOS
-unset SSH_AUTH_SOCK
+#unset SSH_AUTH_SOCK
 setopt nonomatch
 
 # glob
@@ -106,7 +101,7 @@ fi
 
 # virtualenv
 #[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+#source /usr/local/bin/virtualenvwrapper_lazy.sh
 #workon py27
 
 # git
@@ -123,10 +118,10 @@ fi
 eval "$(direnv hook zsh)"
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/takamura/google-cloud-sdk/path.zsh.inc'
+#source '/Users/takamura/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
-source '/Users/takamura/google-cloud-sdk/completion.zsh.inc'
+#source '/Users/takamura/google-cloud-sdk/completion.zsh.inc'
 
 # gem and rbenv
 eval "$(rbenv init - zsh)"
@@ -147,3 +142,16 @@ function iterm2prof() {
 }
 
 #test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+#
+export ANDROID_HOME=/usr/local/share/android-sdk
+export ANDROID_SDK_ROOT=/usr/local/Caskroom/android-sdk/25.2.3/
+
+alias p='rattic --endpoint=http://10.0.2.35 --user=rattic --token="bc6817c8f2ee251913471af8559c14c728ebed04" list | peco | rattic --endpoint=http://10.0.2.35 --user=rattic --token="bc6817c8f2ee251913471af8559c14c728ebed04" show --fields=password | pbcopy'
+
+export PYENV_ROOT="${HOME}/.pyenv"
+
+#if [ -d "${PYENV_ROOT}" ]; then
+#    export PATH=${PYENV_ROOT}/bin:$PATH
+#    eval "$(pyenv init -)"
+#    eval "$(pyenv virtualenv-init -)"
+#fi

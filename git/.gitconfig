@@ -15,6 +15,9 @@
   pus = push
   puh = push
   psuh = push
+  psh = push
+  cloen = clone
+  cloone = clone
 [github]
 	user = nari-ex
 	email = takamura@topotal.com
@@ -26,4 +29,4 @@
 [gpg]
 	program = gpg2
 [commit]
-	gpgsign = true
+	gpgsign = false
