@@ -2,7 +2,6 @@
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 plugins=(git themes bundler emoji-clock brew)
-#plugins=(bgnotify bundler emoji-clock brew)
 source $ZSH/oh-my-zsh.sh
 
 # zsh-completions
@@ -99,11 +98,6 @@ if ( ! test $TMUX ) && ( ! expr $TERM : "^screen" > /dev/null ) && which tmux > 
   fi
 fi
 
-# virtualenv
-#[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-#source /usr/local/bin/virtualenvwrapper_lazy.sh
-#workon py27
-
 # git
 GIT_PS1_SHOWDIRTYSTATE=true
 
@@ -148,10 +142,11 @@ export ANDROID_SDK_ROOT=/usr/local/Caskroom/android-sdk/25.2.3/
 
 alias p='rattic --endpoint=http://10.0.2.35 --user=rattic --token="bc6817c8f2ee251913471af8559c14c728ebed04" list | peco | rattic --endpoint=http://10.0.2.35 --user=rattic --token="bc6817c8f2ee251913471af8559c14c728ebed04" show --fields=password | pbcopy'
 
+# virtualenv
 export PYENV_ROOT="${HOME}/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
-#if [ -d "${PYENV_ROOT}" ]; then
-#    export PATH=${PYENV_ROOT}/bin:$PATH
-#    eval "$(pyenv init -)"
-#    eval "$(pyenv virtualenv-init -)"
-#fi

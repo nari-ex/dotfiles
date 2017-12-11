@@ -18,10 +18,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/Users/takamura/.vim/rc/repos/github.com/Shougo/dein.vim
+set runtimepath^=~/.vim/rc/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('/Users/takamura/.vim/rc'))
+call dein#begin(expand('~/.vim/rc'))
 
 " Let dein manage dein
 " Required:
@@ -46,7 +46,6 @@ call dein#add('mjbrownie/django-template-textobjects')
 call dein#add('lambdalisue/vim-django-support')
 call dein#add('kana/vim-textobj-user')
 call dein#add('godlygeek/tabular')
-call dein#add('gabrielelana/vim-markdown')
 call dein#add('vim-scripts/pathogen.vim')
 call dein#add('alfredodeza/khuno.vim.git')
 call dein#add('chase/vim-ansible-yaml')
@@ -56,6 +55,7 @@ call dein#add('vim-scripts/desert.vim')
 call dein#add('kien/ctrlp.vim')
 call dein#add('majutsushi/tagbar')
 call dein#add('fatih/vim-go')
+call dein#add('plasticboy/vim-markdown')
 
 " Required:
 call dein#end()
@@ -73,5 +73,5 @@ set runtimepath+=~/.vim/
 runtime! userautoload/*.vim
 
 set conceallevel=0
-
-
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_folding_disabled = 1
