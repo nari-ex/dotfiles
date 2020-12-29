@@ -1,7 +1,7 @@
 [user]
 	name = TAKAMURA Narimichi
 	email = nari@nari64.com
-	signingkey = A428F568
+	signingkey = nari@nari64.com
 [push]
 	default = current
 [alias]
@@ -20,13 +20,15 @@
   cloone = clone
 [github]
 	user = nari-ex
-	email = takamura@topotal.com
+	email = nari@nari64.com
 [core]
   editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [gpg]
-	program = gpg2
+	program = gpg
 [commit]
-	gpgsign = false
+	gpgsign = true
+[pull]
+	rebase = false
