@@ -116,7 +116,6 @@ fi
 # direnv
 #eval "$(direnv hook zsh)"
 
-RUBY_CONFIGURE_OPTS="--with-readline-dir=`brew --prefix readline` --with-openssl-dir=`brew --prefix openssl`" RUBY_CONFIGURE_OPTS="--with-readline-dir=`brew --prefix readline` --with-openssl-dir=`brew --prefix openssl`"
 # gem and rbenv
 eval "$(rbenv init - zsh)"
 
@@ -136,12 +135,12 @@ function iterm2prof() {
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # virtualenv
-#export PYENV_ROOT="${HOME}/.pyenv"
-#if [ -d "${PYENV_ROOT}" ]; then
-#    export PATH=${PYENV_ROOT}/bin:$PATH
-#    eval "$(pyenv init -)"
+export PYENV_ROOT="${HOME}/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
 #    eval "$(pyenv virtualenv-init -)"
-#fi
+fi
 
 #eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
