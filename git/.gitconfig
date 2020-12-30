@@ -1,7 +1,7 @@
 [user]
-	name = TAKAMURA Narimichi
-	email = nari@nari64.com
-	signingkey = nari@nari64.com
+	name = Takamura Narimichi
+	email = takamura@nari-ex.com
+	signingkey = takamura@nari-ex.com
 [push]
 	default = current
 [alias]
@@ -20,7 +20,7 @@
   cloone = clone
 [github]
 	user = nari-ex
-	email = nari@nari64.com
+	email = takamura@nari-ex.com
 [core]
   editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore
