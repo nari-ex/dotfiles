@@ -1,6 +1,5 @@
 # zsh-completions
 PROMPT='%{$fg[yellow]%}%{$reset_color%}-> '
-#RPROMPT='%{${fg[yellow]}%}[%~]%{${reset_color}%}'
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
@@ -9,7 +8,6 @@ zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
-#RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 PROMPT=\$vcs_info_msg_0_'-> '
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 
@@ -69,7 +67,6 @@ export PATH="$COREUTILS_PATH:$MYSQL_PATH:$NPM_PATH:$SBIN_PATH:$PATH"
 export PATH="$NPM_PATH:$SBIN_PATH:$PATH"
 
 # alias
-#alias tmux="tmux -2 -u"
 alias top="top -ocpu -s5"
 alias ql="qlmanage -p"
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport"
