@@ -116,6 +116,7 @@ fi
 # direnv
 #eval "$(direnv hook zsh)"
 
+RUBY_CONFIGURE_OPTS="--with-readline-dir=`brew --prefix readline` --with-openssl-dir=`brew --prefix openssl`" RUBY_CONFIGURE_OPTS="--with-readline-dir=`brew --prefix readline` --with-openssl-dir=`brew --prefix openssl`"
 # gem and rbenv
 eval "$(rbenv init - zsh)"
 
