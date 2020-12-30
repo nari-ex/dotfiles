@@ -12,7 +12,6 @@ ln -sf $PWD/direnv/.bin ~/
 ln -sf $PWD/tmux/.tmux.conf ~/
 ln -sf $PWD/vim/.vimrc ~/
 ln -sf $PWD/vim/.vim ~/
-ln -sf $PWD/vim/.vim ~/
 mkdir -p ~/.config
 ln -f $PWD/python/.config/flake8 ~/.config
 ```
