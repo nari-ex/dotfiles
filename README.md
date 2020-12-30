@@ -15,6 +15,8 @@ ln -sf $PWD/vim/.vim ~/
 ln -sf $PWD/vim/.vim ~/
 mkdir -p ~/.config
 ln -f $PWD/python/.config/flake8 ~/.config
+mkdir -p ~/.gnupg
+ln -sf $PWD/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ```
 
 ### Installation
