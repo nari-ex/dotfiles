@@ -1,6 +1,5 @@
 # zsh-completions
 PROMPT='%{$fg[yellow]%}%{$reset_color%}-> '
-#RPROMPT='%{${fg[yellow]}%}[%~]%{${reset_color}%}'
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
@@ -9,7 +8,6 @@ zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
-#RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 PROMPT=\$vcs_info_msg_0_'-> '
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 
@@ -69,11 +67,10 @@ export PATH="$COREUTILS_PATH:$MYSQL_PATH:$NPM_PATH:$SBIN_PATH:$PATH"
 export PATH="$NPM_PATH:$SBIN_PATH:$PATH"
 
 # alias
-#alias tmux="tmux -2 -u"
 alias top="top -ocpu -s5"
 alias ql="qlmanage -p"
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport"
-#alias ls="ls --color=auto"
+alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
@@ -116,7 +113,6 @@ fi
 # direnv
 #eval "$(direnv hook zsh)"
 
-RUBY_CONFIGURE_OPTS="--with-readline-dir=`brew --prefix readline` --with-openssl-dir=`brew --prefix openssl`" RUBY_CONFIGURE_OPTS="--with-readline-dir=`brew --prefix readline` --with-openssl-dir=`brew --prefix openssl`"
 # gem and rbenv
 eval "$(rbenv init - zsh)"
 
@@ -136,12 +132,12 @@ function iterm2prof() {
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # virtualenv
-#export PYENV_ROOT="${HOME}/.pyenv"
-#if [ -d "${PYENV_ROOT}" ]; then
-#    export PATH=${PYENV_ROOT}/bin:$PATH
-#    eval "$(pyenv init -)"
+export PYENV_ROOT="${HOME}/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
 #    eval "$(pyenv virtualenv-init -)"
-#fi
+fi
 
 #eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 

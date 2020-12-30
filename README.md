@@ -12,7 +12,6 @@ ln -sf $PWD/direnv/.bin ~/
 ln -sf $PWD/tmux/.tmux.conf ~/
 ln -sf $PWD/vim/.vimrc ~/
 ln -sf $PWD/vim/.vim ~/
-ln -sf $PWD/vim/.vim ~/
 mkdir -p ~/.config
 ln -f $PWD/python/.config/flake8 ~/.config
 mkdir -p ~/.gnupg
@@ -24,4 +23,5 @@ ln -sf $PWD/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ```
 brew install zsh-completions
 curl -L https://raw.github.com/felixr/docker-zsh-completion/master/_docker > /usr/local/share/zsh-completions/_docker
+curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 ```
