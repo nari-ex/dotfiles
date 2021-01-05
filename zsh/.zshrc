@@ -60,7 +60,7 @@ autoload -U colors; colors
 
 # path
 export COREUTILS_PATH="/usr/local/opt/coreutils/libexec/gnubin"
-export MYSQL_PATH="/usr/local/mysql/bin"
+export MYSQL_PATH="/usr/local/opt/mysql@5.7/bin"
 export NPM_PATH="/usr/local/share/npm/bin"
 export SBIN_PATH="/usr/local/sbin"
 export PATH="$COREUTILS_PATH:$MYSQL_PATH:$NPM_PATH:$SBIN_PATH:$PATH"
@@ -88,7 +88,7 @@ alias add-envrc='echo "export PATH=\$HOME/.bin:\$PATH" > .envrc; direnv allow'
 alias vim=code
 
 # env
-export MYSQL_PREFIX="/usr/local/mysql"
+export MYSQL_PREFIX="/usr/local/opt/mysql@5.7"
 export TERM="xterm-256color"
 export LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
 eval $(gdircolors ~/.dir_colors -b)
