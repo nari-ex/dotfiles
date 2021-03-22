@@ -1,5 +1,4 @@
 # zsh-completions
-PROMPT='%{$fg[yellow]%}%{$reset_color%}-> '
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
@@ -8,7 +7,7 @@ zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
-PROMPT=\$vcs_info_msg_0_'-> '
+PROMPT=\$vcs_info_msg_0_'➜ '
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 
 
