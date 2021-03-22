@@ -28,7 +28,6 @@ setopt list_packed
 setopt list_types
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 setopt MULTIOS
-unset SSH_AUTH_SOCK
 setopt nonomatch
 
 # glob
@@ -112,15 +111,20 @@ fi
 # direnv
 #eval "$(direnv hook zsh)"
 
-# gem and rbenv
-eval "$(rbenv init - zsh)"
+# gpg-agent
+AGENT_SOCK=$(gpgconf --list-dirs | grep agent-socket | cut -d : -f 2)
+if [[ ! -S $AGENT_SOCK ]]; then
+  gpg-agent --daemon --use-standard-socket &>/dev/null
+fi
+export GPG_TTY=$(tty)
 
-# gpg
-GPG_TTY=$(tty)
-SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
-export GPG_TTY SSH_AUTH_SOCK
-if [ ! -e ${SSH_AUTH_SOCK} ]; then
-  eval $(gpg-agent --daemon)
+# ssh-agent
+if [ -f ~/.ssh-agent ]; then
+    . ~/.ssh-agent
+fi
+if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
+    ssh-agent | grep -v echo > ~/.ssh-agent
+    . ~/.ssh-agent
 fi
 
 # iTerm2
