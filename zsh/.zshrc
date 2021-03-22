@@ -102,14 +102,14 @@ if ( ! test $TMUX ) && ( ! expr $TERM : "^screen" > /dev/null ) && which tmux > 
 fi
 
 # go
-#if [ -x "$(which go)" ]; then
-#  export GOROOT=`go env GOROOT`
-#  export GOPATH=$HOME/go
-#  export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-#fi
+# if [ -x "$(which go)" ]; then
+#   export GOROOT=`go env GOROOT`
+#   export GOPATH=$HOME/go
+#   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+# fi
 
 # direnv
-#eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 
 # gpg-agent
 AGENT_SOCK=$(gpgconf --list-dirs | grep agent-socket | cut -d : -f 2)
@@ -117,15 +117,6 @@ if [[ ! -S $AGENT_SOCK ]]; then
   gpg-agent --daemon --use-standard-socket &>/dev/null
 fi
 export GPG_TTY=$(tty)
-
-# ssh-agent
-if [ -f ~/.ssh-agent ]; then
-    . ~/.ssh-agent
-fi
-if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
-    ssh-agent | grep -v echo > ~/.ssh-agent
-    . ~/.ssh-agent
-fi
 
 # iTerm2
 function iterm2prof() {
