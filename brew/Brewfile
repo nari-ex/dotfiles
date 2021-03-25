@@ -1,221 +1,55 @@
-
-# Other Homebrew packages
-brew adns
-brew adwaita-icon-theme
-brew atk
-brew autoconf
-brew automake
-brew bash
-brew bash-completion
-brew bdw-gc
-brew bison
-brew brew-file
-brew cabal-install
-brew cairo
-brew check
-brew clang-format
-brew cmake
-brew convmv
-brew coreutils
-brew cpptest
-brew cscope
-brew ctags
-brew czmq
-brew dbus
-brew direnv
-brew dirmngr
-brew docker
-brew envchain
-brew fontconfig
-brew fontforge
-brew freetype
-brew gcal
-brew gd
-brew gdbm
-brew gdk-pixbuf
-brew gettext
-brew ghc
-brew ghostscript
-brew git
-brew glib
-brew glib-networking
-brew gmp
-brew gnu-sed
-brew gnupg --with-readline
-brew gnupg@2.0
-brew gnuplot
-brew gnutls
-brew go
-brew gobject-introspection
-brew gpg-agent
-brew graphite2
-brew graphviz
-brew groff
-brew gsettings-desktop-schemas
-brew gtk+
-brew gtk+3
-brew gtk-vnc
-brew harfbuzz
-brew hicolor-icon-theme
-brew icu4c
-brew imagemagick
-brew intltool
-brew jasper
-brew jbig2dec
-brew jpeg
-brew jq
-brew keybase
-brew lesspipe
-brew lftp
-brew libassuan
-brew libcroco
-brew libepoxy
-brew libevent
-brew libffi
-brew libgcrypt
-brew libgpg-error
-brew libgphoto2
-brew libicns --universal
-brew libiconv
-brew libidn
-brew libksba
-brew libmagic
-brew libnet
-brew libogg
-brew libosinfo
-brew libpng
-brew librsvg
-brew libsodium
-brew libsoup
-brew libtasn1
-brew libtiff
-brew libtool --universal
-brew libunistring
-brew libusb --universal
-brew libusb-compat
-brew libvirt
-brew libvirt-glib
-brew libvorbis
-brew libxml2
-brew libxslt
-brew libxspf
-brew libyaml
-brew little-cms2
-brew lua
-brew macvim --with-lua
-brew makedepend
-brew mariadb
-brew mas
-brew mercurial
-brew mongodb
-brew ncurses
-brew net-snmp
-brew nettle
-brew nkf
-brew nmap
-brew node
-brew npth
-brew oniguruma
-brew openssl
-brew openssl@1.1
-brew ossp-uuid
-brew p11-kit
-brew pandoc
-brew pango
-brew pcre
-brew pcre2
-brew peco
-brew pillow
-brew pinentry
-brew pinentry-mac
-brew pixman
-brew pkg-config
-brew portmidi
-brew postgresql
-brew pth
-brew putty
-brew pv
-brew py2cairo
-brew pyenv
-brew pyenv-virtualenv
-brew pygobject3
-brew python
-brew python3
-brew qemu
-brew rbenv
-brew readline
-brew reattach-to-user-namespace
-brew redis
-brew ricty --vim-powerline
-brew ruby-build
-brew sane-backends
-brew scons
-brew sdl
-brew sdl_image
-brew sdl_mixer
-brew sdl_ttf
-brew shared-mime-info
-brew spice-gtk
-brew spice-protocol
-brew sqlite
-brew ssh-copy-id
-brew tcptraceroute
-brew terminal-notifier
-brew terraform
-brew tig
-brew tmux
-brew tree
-brew uriparser
-brew usbredir
-brew utf8proc
-brew vala
-brew vim --with-lua --HEAD
-brew virt-manager
-brew virt-viewer
-brew vte3
-brew w3m
-brew watch
-brew webp
-brew wget
-brew wine
-brew xz --universal
-brew yajl
-brew yarn
-brew zeromq
-brew zsh-completions
-
-# Cask applications
-cask adium
-cask android-sdk
-cask basictex
-cask elm-platform
-cask fontforge
-cask java
-cask mactex
-cask mojibar
-cask powershell
-cask vagrant
-cask virtualbox
-cask wireshark
-
-# App Store applications
-appstore 808647808 ActivityTimer (2.0.5)
-appstore 417375580 BetterSnapTool (1.8)
-appstore 449589707 Dash (3.3.1)
-appstore 847496013 Deckset (1.8.3)
-appstore 408981434 iMovie (10.1.8)
-appstore 409183694 Keynote (7.3.1)
-appstore 585126594 Kiritori (0.9.2)
-appstore 539883307 LINE (5.4.2)
-appstore 946680495 MARKETSPEED (2.6.1)
-appstore 715768417 Microsoft Remote Desktop (8.0.27325)
-appstore 409203825 Numbers (4.3.1)
-appstore 409201541 Pages (6.3.1)
-appstore 472995993 Remote Desktop - VNC (1.1)
-appstore 425424353 The Unarchiver (3.11.3)
-appstore 1278508951 Trello (2.10.0)
-appstore 409789998 Twitter (4.3.2)
-appstore 461369673 VOX (3.0)
-appstore 497799835 Xcode (9.2)
-appstore 428834068 YoruFukurou (2.85)
-appstore 638161122 YubiKey Personalization Tool (3.1.24)
+tap "heroku/brew"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "sanemat/font"
+brew "awscli"
+brew "glib"
+brew "coreutils"
+brew "gobject-introspection"
+brew "harfbuzz"
+brew "ffmpeg"
+brew "pango"
+brew "fontforge"
+brew "gh"
+brew "git"
+brew "gnupg"
+brew "mkcert"
+brew "mysql@5.7", restart_service: true
+brew "nodenv"
+brew "pinentry-mac"
+brew "pyenv"
+brew "rbenv"
+brew "source-highlight"
+brew "squid"
+brew "teleport"
+brew "telnet"
+brew "terraform"
+brew "tig"
+brew "tmux"
+brew "vim"
+brew "watch"
+brew "yarn"
+brew "heroku/brew/heroku"
+brew "sanemat/font/ricty", args: ["with-powerline"]
+cask "1password"
+cask "alfred"
+cask "altair-graphql-client"
+cask "choosy"
+cask "deckset"
+cask "deepl"
+cask "discord"
+cask "font-hackgen"
+cask "font-hackgen-nerd"
+cask "google-drive"
+cask "google-drive-file-stream"
+cask "google-japanese-ime"
+cask "iterm2"
+cask "keepassxc"
+cask "slack"
+cask "tunnelblick"
+cask "visual-studio-code"
+cask "vivaldi"
+cask "zoom"
