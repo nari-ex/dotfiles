@@ -88,7 +88,7 @@ alias vim=code
 # env
 export MYSQL_PREFIX="/usr/local/opt/mysql@5.7"
 export TERM="xterm-256color"
-export LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
+export LESSOPEN="|/usr/local/bin/src-hilite-lesspipe.sh %s"
 eval $(gdircolors ~/.dir_colors -b)
 
 # tmux
