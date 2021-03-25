@@ -84,6 +84,7 @@ alias g="git"
 alias g-addremove='git add .; git ls-files --deleted | while read FILE; do git rm $FILE; done'
 alias add-envrc='echo "export PATH=\$HOME/.bin:\$PATH" > .envrc; direnv allow'
 alias vim=code
+alias less="less -R"
 
 # env
 export MYSQL_PREFIX="/usr/local/opt/mysql@5.7"
