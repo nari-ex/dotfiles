@@ -108,6 +108,10 @@ fi
 #   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 # fi
 
+# ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
+
 # direnv
 # eval "$(direnv hook zsh)"
 
