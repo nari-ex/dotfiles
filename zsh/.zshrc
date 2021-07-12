@@ -58,7 +58,7 @@ autoload -U colors; colors
 
 # path
 export COREUTILS_PATH="/usr/local/opt/coreutils/libexec/gnubin"
-export MYSQL_PATH="/usr/local/opt/mysql@5.7/bin"
+export MYSQL_PATH="/opt/homebrew/opt/mysql@5.7/bin"
 export NPM_PATH="/usr/local/share/npm/bin"
 export SBIN_PATH="/usr/local/sbin"
 export PATH="$COREUTILS_PATH:$MYSQL_PATH:$NPM_PATH:$SBIN_PATH:$PATH"
@@ -68,7 +68,7 @@ export PATH="$NPM_PATH:$SBIN_PATH:$PATH"
 alias top="top -ocpu -s5"
 alias ql="qlmanage -p"
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport"
-alias ls="ls --color=auto"
+alias ls="gls --color=auto"
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
@@ -85,9 +85,11 @@ alias g-addremove='git add .; git ls-files --deleted | while read FILE; do git r
 alias add-envrc='echo "export PATH=\$HOME/.bin:\$PATH" > .envrc; direnv allow'
 alias vim=code
 alias less="less -R"
+alias tsh-login="tsh --proxy teleport.sre.aws.topot.al login --user=nari-ex"
+alias aws-sso-login="AWS_PROFILE=topotal-sre aws sso login"
 
 # env
-export MYSQL_PREFIX="/usr/local/opt/mysql@5.7"
+export MYSQL_PREFIX="/opt/homebrew/opt/mysql@5.7"
 export TERM="xterm-256color"
 export LESSOPEN="|/usr/local/bin/src-hilite-lesspipe.sh %s"
 eval $(gdircolors ~/.dir_colors -b)
