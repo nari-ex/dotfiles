@@ -22,7 +22,7 @@
 	user = nari-ex
 	email = takamura@nari-ex.com
 [core]
-  editor = /usr/local/bin/vim
+  editor = /opt/homebrew/opt/vim/bin/vim
   excludesfile = ~/.gitignore
 [url "git@github.com:"]
 	insteadOf = https://github.com/
