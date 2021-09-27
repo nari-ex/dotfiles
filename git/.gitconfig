@@ -2,8 +2,10 @@
 	name = Takamura Narimichi
 	email = takamura@nari-ex.com
 	signingkey = takamura@nari-ex.com
+
 [push]
 	default = current
+
 [alias]
   st = status
   ci = commit -v
@@ -18,17 +20,26 @@
   psh = push
   cloen = clone
   cloone = clone
+
 [github]
 	user = nari-ex
 	email = takamura@nari-ex.com
+
 [core]
   editor = /opt/homebrew/opt/vim/bin/vim
   excludesfile = ~/.gitignore
+
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+
 [gpg]
 	program = gpg
+
 [commit]
 	gpgsign = true
+
 [pull]
 	rebase = false
+
+[ghq]
+	root = ~/work

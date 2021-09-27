@@ -9,7 +9,9 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 PROMPT=\$vcs_info_msg_0_'➜ '
 zstyle ':completion:*' list-colors "${LS_COLORS}"
-
+_cache_hosts=(`fgrep 'Host ' ~/.ssh/config | awk '{print $2}' | sort`)
+autoload -U compinit
+compinit
 
 # general
 export PATH=/usr/local/opt/openssl/bin:$PATH:$HOME/bin:/usr/local/bin
@@ -69,9 +71,9 @@ alias top="top -ocpu -s5"
 alias ql="qlmanage -p"
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport"
 alias ls="gls --color=auto"
-alias grep="grep --color=auto"
-alias fgrep="fgrep --color=auto"
-alias egrep="egrep --color=auto"
+alias grep="ggrep --color=auto"
+alias fgrep="gfgrep --color=auto"
+alias egrep="gegrep --color=auto"
 alias sl="ls"
 alias ll="ls -AlF"
 alias la="ls -A"
@@ -91,7 +93,7 @@ alias aws-sso-login="AWS_PROFILE=topotal-sre aws sso login"
 # env
 export MYSQL_PREFIX="/opt/homebrew/opt/mysql@5.7"
 export TERM="xterm-256color"
-export LESSOPEN="|/usr/local/bin/src-hilite-lesspipe.sh %s"
+export LESSOPEN="|/opt/homebrew/bin/src-hilite-lesspipe.sh %s"
 eval $(gdircolors ~/.dir_colors -b)
 
 # tmux
@@ -104,12 +106,29 @@ if ( ! test $TMUX ) && ( ! expr $TERM : "^screen" > /dev/null ) && which tmux > 
   fi
 fi
 
-# go
-# if [ -x "$(which go)" ]; then
-#   export GOROOT=`go env GOROOT`
-#   export GOPATH=$HOME/go
-#   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-# fi
+# golang
+if [ -x "$(which go)" ]; then
+  export GOROOT=`go env GOROOT`
+  export GOPATH=$HOME/go
+  export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+fi
+
+function peco-src () {
+  local base_dir=$(git config ghq.root)
+  local selected_dir=${base_dir}/$(ghq list | peco --query "${LBUFFER}")
+  if [ -n "${selected_dir}" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+bindkey '^]' peco-src
+
+eval "$(gh completion -s zsh)"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
 
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -135,20 +154,14 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # virtualenv
 export PYENV_ROOT="${HOME}/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
-    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init --path)"
     eval "$(pyenv init -)"
-#    eval "$(pyenv virtualenv-init -)"
 fi
 
-#eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
-
+# node
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
-# The next line updates PATH for the Google Cloud SDK.
-#if [ -f '/Users/takamura/tmp/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/takamura/tmp/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-#if [ -f '/Users/takamura/tmp/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/takamura/tmp/google-cloud-sdk/completion.zsh.inc'; fi
-
-eval "$(gh completion -s zsh)"
+# gogole cloud sdk
+if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
